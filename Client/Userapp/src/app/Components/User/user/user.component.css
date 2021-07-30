@@ -1,0 +1,26 @@
+h6{
+    line-height: 10px;
+}
+#userData{
+    border-style: solid;
+    border-radius: 5px;
+    height: auto;
+    width: 300px;
+    margin: 0 auto 0 auto;
+}
+#usrOtrData{
+    border-style: solid;
+    border-radius: 5px;
+    height: auto;
+    width: 250px;
+    margin: 0 auto 0 0;
+}
+
+/* change the crusor to pointer */
+#userId{
+    cursor: pointer;
+}
+#reqBtns{
+    display: flex;
+    justify-content: flex-end;
+}

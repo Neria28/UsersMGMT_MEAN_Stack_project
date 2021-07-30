@@ -1,0 +1,32 @@
+<div id="dashbDiv">
+    <!--Todos Section-->
+    <div id="todosSec">
+        <div id="todoHeader">
+            <span>{{userData.name}} - Todos</span>
+            <input type="button" [value]="addTodoPresd? 'Back' : 'Add Todo'" (click)="addTodoPresd=!addTodoPresd">
+        </div>
+        <!--Add Todo-->
+        <div id="addTodoDiv" *ngIf=addTodoPresd>
+            <form #addTodoF="ngForm" ngSubmit="addTodoToUser(addTodoF.form.valid)">
+                <label for="title">Title</label>
+                <input type="text" #title (keyup)="newTodo.title = title.value">
+                <input type="submit" value="Save">
+                <input type="button" value="Cancel" (click)="addTodoPresd = !addTodoPresd">
+            </form>
+        </div>
+        <!--Todo Details-->
+        <app-todomain [userTodos]='userData.todos!' *ngIf="!addTodoPresd"></app-todomain>
+    </div>
+
+    <!--Posts Section-->
+    <div id="postsSec">
+        <div id="postHeader">
+            <span>{{userData.name}} - Posts</span>
+            <input type="button" [value]="addPostsPresd? 'Back' : 'Add Post'" (click)="addPostsPresd=!addPostsPresd">
+        </div>
+        <!--Add Todo-->
+        <app-addpost *ngIf="addPostsPresd"></app-addpost>
+        <!--Todo Details-->
+        <app-postmain [userPosts]='userData.posts!' *ngIf="!addPostsPresd"></app-postmain>
+    </div>
+</div>

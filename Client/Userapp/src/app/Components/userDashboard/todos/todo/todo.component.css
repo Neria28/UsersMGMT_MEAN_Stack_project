@@ -1,0 +1,13 @@
+#todoData{
+    border-style: solid;
+    border-color:rebeccapurple;
+    width: 225px;
+    height: 80px;
+    margin: 0 auto 0 auto;
+}
+
+#MCDiv{
+    display: flex;
+    margin: -6px 0 0 0;
+    justify-content:flex-end;
+}

@@ -1,0 +1,11 @@
+#todoHeader , #postHeader{
+    text-align:center;
+}
+
+#addTodoDiv{
+    display: flex;
+    justify-content: center;
+    border-style: solid;
+    border-color: darkorchid;
+
+}

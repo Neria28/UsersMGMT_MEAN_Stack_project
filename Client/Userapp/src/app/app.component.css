@@ -1,0 +1,19 @@
+#mainDiv{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-self: center;
+
+}
+#usersMainDiv{
+    border-style: solid;
+    border-radius: 5%;
+    height: auto;
+    width: 500px;
+}
+#userDashboard{
+    border-style: solid;
+    border-radius: 5%;
+    height: auto;
+    width: 500px;
+}

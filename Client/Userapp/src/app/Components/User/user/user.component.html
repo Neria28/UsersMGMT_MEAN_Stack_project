@@ -1,0 +1,31 @@
+<div id="userData"[style.backgroundColor]="isClicked? 'orange' : 'white' " #usrDataDiv [style.border-color]="checkTodosStatus()? 'green':'red'">
+    
+    <form #usrForm="ngForm" (ngSubmit)="updateUser(usrForm.form.valid)">
+        <span id="userId" (click)="goToDashboard()">ID:{{user._id}}</span><br />
+        <!--User Name-->
+        <label for="name">*Name: </label>
+        <input required type="text" name="name" #name="ngModel" [(ngModel)]="user.name"><br />
+        <h6 *ngIf="!name.valid && name.dirty" style="color: red;">User must have Name!</h6>        
+        <!--User Email-->
+        <label for="email">*Email Adress: </label>
+        <input required type="text" class="form-control" name="email" #email="ngModel" [(ngModel)]="user.email"><br />
+        <h6 *ngIf="!email.valid && email.dirty" style="color: red;">email is rquired</h6>
+        
+        <!--Other Data Section-->
+        <div id="usrOtrDataBtn">
+            <button (mouseover)="showOtherData = true" (click)="showOtherData =false ">Other Data</button><br />
+        </div>
+        
+        <!--Other Data Div-->
+        <div id="usrOtrData" [style.display]="showOtherData? 'block' : 'none' ">
+            Street:<input type="text" name="street" #street="ngModel" [(ngModel)]="user.street"><br />
+            City:<input type="text" name="city" #city="ngModel" [(ngModel)]="user.city"><br />
+            ZipCode:<input type="text" name="zipcode" #zipcode="ngModel" [(ngModel)]="user.zipcode"><br />
+        </div>
+        <div id="reqBtns">
+            <input type="submit" name="update" value="Update">
+            <button (click)="deleteUser()">Delete</button>
+        </div>
+
+    </form>
+</div><br />

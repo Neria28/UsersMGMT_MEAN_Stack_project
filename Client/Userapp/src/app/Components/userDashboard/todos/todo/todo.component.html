@@ -1,0 +1,7 @@
+<div id="todoData">
+    <h5><b>Title:</b> {{todo.title}}</h5>
+    <h5><b>Completed:</b> {{todo.completed}}</h5>
+    <div id="MCDiv" *ngIf="todo.completed == false">
+        <button>Mark Completed</button>
+    </div>
+</div><br/>

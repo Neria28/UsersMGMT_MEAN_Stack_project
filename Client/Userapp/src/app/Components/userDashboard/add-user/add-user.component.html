@@ -1,0 +1,15 @@
+<div id="addUserMainDiv">
+    <h3>Add New User</h3>
+    <div id="formDiv">
+        <form  #addUserF="ngForm" (ngSubmit)="onSubmit(addUserF)" novalidate >
+            <label for="name">Name:</label>
+            <input type="text" required #name="ngModel" name="name" [(ngModel)]="userToAdd.name"><br/>
+            <label for="name">Email: </label>
+            <input type="text" required #Email="ngModel" name="email" [(ngModel)]="userToAdd.email">
+            <div id="btnsDiv">
+                <input type="submit" value="Add">
+                <input type="button" value="Cancel" routerLink='/'>
+            </div>
+        </form>
+    </div>
+</div>

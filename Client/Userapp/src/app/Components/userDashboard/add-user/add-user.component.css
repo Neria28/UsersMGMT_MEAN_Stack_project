@@ -1,0 +1,20 @@
+#addUserMainDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+#formDiv{
+    display: flex;
+    border-style: solid;
+    width: 250px;
+    height: 100px;
+    justify-content: center;
+
+}
+#btnsDiv{
+    display:flex;
+    justify-content: flex-end;
+    align-items:flex-end;
+}

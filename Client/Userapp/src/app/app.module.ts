@@ -10,7 +10,7 @@ import { AppComponent } from './app.component';
 // Users Comps Section
 import { UsermainComponent } from './Components/User/usermain/usermain.component';
 import { UserComponent } from './Components/User/user/user.component';
-import { AddUserComponent } from './Components/User/add-user/add-user.component';
+import { AddUserComponent } from './Components/userDashboard/add-user/add-user.component'; 
 // DashBoard Section
 import { DashboardComponent } from './Components/userDashboard/dashboard/dashboard.component';
 import { PostmainComponent } from './Components/userDashboard/posts/postmain/postmain.component';
@@ -22,7 +22,7 @@ import { TodoComponent } from './Components/userDashboard/todos/todo/todo.compon
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const appRouter : Routes = [{path : 'userDashboard/:userId' , component : DashboardComponent},
-                            {path : 'userDashboard/:userId/addTodo' , component : DashboardComponent}]
+                            {path : 'adduser' , component : AddUserComponent}]
 @NgModule({
   declarations: [
     AppComponent,

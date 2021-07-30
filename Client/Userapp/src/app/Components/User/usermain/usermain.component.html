@@ -2,12 +2,8 @@
     <div id="search">
         <input placeholder="Search" type="text" name="search" #src (keyup)="search(src.value)" (click)="search(src.value)">
         <input type="button" value="Search">
-        <input type="button" [value]="addUserPresd?  'Back' : 'Add' " (click)="addUserPresd = !addUserPresd">
-    </div>
-    <!--Add User-->
-    <div id="addUserDIV" *ngIf="addUserPresd">
-        <app-add-user></app-add-user>
-    </div>
+        <input type="button" value="Add" routerLink="/adduser">
+    </div>    
     <!--All Users And thier data-->
     <div id="userDiv">
         <div div="userData" *ngIf="!addUserPresd">

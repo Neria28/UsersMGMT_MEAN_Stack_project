@@ -27,8 +27,13 @@ export class UserComponent implements OnInit {
 
   goToDashboard(){
     this.isClicked = !this.isClicked
-    sessionStorage["userId"] = this.user._id
-    this.router.navigate(['/userDashboard/'+this.user._id])
+    if(this.isClicked){
+      sessionStorage["userId"] = this.user._id
+      this.router.navigate(['/userDashboard/'+this.user._id])
+    }else{
+      this.router.navigate(['/'])
+    }
+    
   }
   
   updateUser(isValid : Boolean){

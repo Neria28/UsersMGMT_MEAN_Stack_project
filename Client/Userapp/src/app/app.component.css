@@ -1,9 +1,12 @@
 #mainDiv{
     display: flex;
-    justify-content: center;
+    justify-content:center;
     flex-direction: row;
+    flex-flow: row nowrap;
     align-self: center;
-
+    height: auto;
+    width: 85%;
+    margin: 0 auto;
 }
 #usersMainDiv{
     border-style: solid;

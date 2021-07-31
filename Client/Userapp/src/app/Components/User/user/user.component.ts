@@ -34,16 +34,18 @@ export class UserComponent implements OnInit {
   updateUser(isValid : Boolean){
     if(isValid == true){
       this.sub = this.userUtils.putUser(this.user._id! , this.user)
-        .subscribe(data => alert(data))
+        .subscribe(data => {
+          alert(data)
+        })
     }else{
       alert("Please Check All Fields")
     }
   }
 
-  deleteUser(){
-    this.sub = this.userUtils.deleteUser(this.user._id!)
-      .subscribe(data => {alert(`uaser ${this.user.name!} Deleted`)
-        this.userStorage.deleteUserData(this.user._id!)
+  deleteUser(userId : String){
+    this.sub = this.userUtils.deleteUser(userId)
+      .subscribe(data => {alert(`uaser ${userId} Deleted`)
+        this.userStorage.deleteUserData(userId)
         this.router.navigate(['/']);      
       });
       }

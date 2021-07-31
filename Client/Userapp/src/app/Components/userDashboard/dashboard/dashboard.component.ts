@@ -1,11 +1,12 @@
 import { Component, OnInit, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { TodosandpostsService} from 'src/app/services/todosandposts-utils.service';
+import { UserStorageService } from 'src/app/services/user-storage.service';
+import { UserUtilsService } from 'src/app/services/user-utils.service';
 import { Post } from 'src/app/Classes/post';
 import { Todo } from 'src/app/Classes/todo';
 import { User } from 'src/app/Classes/user';
-import { TodosandpostsService} from 'src/app/services/todosandposts-utils.service';
-import { UserStorageService } from 'src/app/services/user-storage.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -21,6 +22,7 @@ export class DashboardComponent implements OnInit {
     title : '',
     completed : false
   }
+  
   // Post Section
   addPostsPresd : Boolean = false;
   newPost : Post = {
@@ -31,12 +33,15 @@ export class DashboardComponent implements OnInit {
   allUsers : User[] = []
   sub : Subscription = new Subscription()
   
-  constructor(private ar : ActivatedRoute , private TandPUtils : TodosandpostsService,
-              private userStorage : UserStorageService) { }
+  constructor(private ar : ActivatedRoute , 
+              private TandPUtils : TodosandpostsService,
+              private userStorage : UserStorageService,
+              private userUtils : UserUtilsService) { }
 
               
   getUserData(id :string){
-      this.userData = this.allUsers.find(x=> x._id === id)!;
+      this.sub = this.userUtils.getUser(id)!
+      .subscribe(data => this.userData=data);
   }
 
   //Add Todo to DB and to Local UsersStorage

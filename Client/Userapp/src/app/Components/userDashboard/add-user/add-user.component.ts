@@ -16,8 +16,11 @@ export class AddUserComponent implements OnInit {
   userToAdd : User = {name:"" , email : ""}
   sub : Subscription = new Subscription();
 
-  constructor(private userUtils : UserUtilsService , private router:Router,
-    private userStorage : UserStorageService) { }
+  constructor(
+    private userUtils : UserUtilsService , 
+    private router:Router,
+    private userStorage : UserStorageService 
+    ){}
 
   onSubmit(f : NgForm){
     if(f.valid == true){
@@ -25,10 +28,8 @@ export class AddUserComponent implements OnInit {
       .subscribe(data => {
         alert(data)
         this.router.navigate(['/'])
-        this.sub = this.userUtils.getUsers().subscribe(data=> {
-          //Seve Users for other copmponents
-          this.userStorage.saveUsersData(data);
-        });
+        this.userStorage.addUserData(this.userToAdd);
+        this.router.navigate([''])
       })
     }else{
       alert("Both Name and Email Required!")

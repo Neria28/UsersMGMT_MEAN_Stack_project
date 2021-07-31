@@ -1,6 +1,7 @@
 #postData{
     border-style: solid;
     border-color:rebeccapurple;
+    border-radius: 8px;
     width: 400px;
     height: auto;
     margin: 0 auto 0 auto;

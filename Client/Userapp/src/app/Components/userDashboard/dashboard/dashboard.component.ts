@@ -1,10 +1,11 @@
 import { Component, OnInit, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { Post } from 'src/app/Classes/post';
 import { Todo } from 'src/app/Classes/todo';
 import { User } from 'src/app/Classes/user';
+import { TodosandpostsService} from 'src/app/services/todosandposts-utils.service';
 import { UserStorageService } from 'src/app/services/user-storage.service';
-import { UserUtilsService } from 'src/app/services/user-utils.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -12,21 +13,60 @@ import { UserUtilsService } from 'src/app/services/user-utils.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  @Output()userData : User = new User();
+  @Output()
+  userData : User = {};
   // Todos Section
   addTodoPresd : Boolean = false;
-  newTodo : Todo = new Todo()
-  
+  newTodo : Todo = {
+    title : '',
+    completed : false
+  }
+  // Post Section
   addPostsPresd : Boolean = false;
+  newPost : Post = {
+    title : '',
+    body : ''
+  }
+  
   allUsers : User[] = []
   sub : Subscription = new Subscription()
   
-  constructor(private ar : ActivatedRoute , private userUtils : UserUtilsService,
+  constructor(private ar : ActivatedRoute , private TandPUtils : TodosandpostsService,
               private userStorage : UserStorageService) { }
 
+              
   getUserData(id :string){
       this.userData = this.allUsers.find(x=> x._id === id)!;
   }
+
+  //Add Todo to DB and to Local UsersStorage
+  addTodoToUser(isValid : Boolean , userId : String){
+    if(isValid == true){
+     this.sub = this.TandPUtils.postTodo(this.userData._id!, this.newTodo)
+     .subscribe(data => {
+       alert(data)
+       this.userStorage.addNewTodoToUser(userId , this.newTodo)
+       this.addTodoPresd = false
+      })
+    }else{
+      alert("todo must have title!")
+    }
+  }
+
+  //Add Post to DB and to Local UsersStorage
+  addPostToUser(isValid : Boolean , userId : String){
+    if(isValid == true){
+     this.sub = this.TandPUtils.postPost(this.userData._id!, this.newPost)
+     .subscribe(data => {
+       alert(data)
+       this.userStorage.addNewPostToUser(userId , this.newPost)
+       this.addPostsPresd = false
+      })
+    }else{
+      alert("Check both title and body fields!")
+    }
+  }
+
   ngOnInit(): void {
     this.allUsers = this.userStorage.getUsersData()
     let userId : string =""

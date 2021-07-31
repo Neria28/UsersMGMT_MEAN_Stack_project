@@ -11,14 +11,19 @@ exports.getTodo = function(id)
     })
 }
 
-exports.createTodo = function(userId , todoObj){
-    return new Promise((resolve, reject)=>{
-        Users.findById(userId, (err,data)=>{
-            if(err){reject(err)}
-            else{
-                data.todos.push(todoObj);
-                data.save((err,data)=>{
-                    (err)? reject(err) : resolve(data.todos[data.todos.length -1]);
+exports.createTodo = function(userId,todoObj){
+    return new Promise((resolve,reject)=>{
+        Users.findById(userId , (err , data)=>{
+            if(err){
+                reject(err);
+            }else{
+                data.todos.push(todoObj)
+                data.save((err , data)=>{
+                    if(err){
+                        reject(err)
+                    }else{
+                        resolve("created")
+                    }
                 })
             }
         })

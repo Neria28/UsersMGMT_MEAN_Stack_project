@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { Post } from '../Classes/post';
+import { Todo } from '../Classes/todo';
 import { User } from '../Classes/user';
 
 @Injectable({
@@ -28,6 +30,22 @@ export class UserStorageService {
   }
 
   addUserData(user : User){
-    
+    let usersArr= this.UsersStorage;
+    usersArr.push(user);
+    this.UsersStorage = usersArr;
+  }
+
+  addNewTodoToUser(userId : String , newTodo : Todo){
+    let usersArr= this.UsersStorage;
+    let crntUser = usersArr.findIndex((user : User)=> user._id === userId);
+    usersArr[crntUser].todos?.push(newTodo)
+    this.UsersStorage = usersArr
+  }
+
+  addNewPostToUser(userId : String , newPost : Post){
+    let usersArr= this.UsersStorage;
+    let crntUser = usersArr.findIndex((user : User)=> user._id === userId);
+    usersArr[crntUser].posts?.push(newPost)
+    this.UsersStorage = usersArr
   }
 }

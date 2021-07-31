@@ -7,11 +7,14 @@
         </div>
         <!--Add Todo-->
         <div id="addTodoDiv" *ngIf=addTodoPresd>
-            <form #addTodoF="ngForm" ngSubmit="addTodoToUser(addTodoF.form.valid)">
+            <form #addTodoF="ngForm" (ngSubmit)="addTodoToUser(addTodoF.form.valid,userData._id!)">
                 <label for="title">Title</label>
-                <input type="text" #title (keyup)="newTodo.title = title.value">
-                <input type="submit" value="Save">
-                <input type="button" value="Cancel" (click)="addTodoPresd = !addTodoPresd">
+                <input type="text" required #title="ngModel" name="title" [(ngModel)]="newTodo.title">
+                <h6 *ngIf="!title.valid && title.dirty" style="color: red;">Todo Must Have title</h6>
+                <div id="addTodoBtns">
+                    <input type="submit" value="Save">
+                    <input type="button" value="Cancel" (click)="addTodoPresd = !addTodoPresd">
+                </div>
             </form>
         </div>
         <!--Todo Details-->
@@ -24,9 +27,22 @@
             <span>{{userData.name}} - Posts</span>
             <input type="button" [value]="addPostsPresd? 'Back' : 'Add Post'" (click)="addPostsPresd=!addPostsPresd">
         </div>
-        <!--Add Todo-->
-        <app-addpost *ngIf="addPostsPresd"></app-addpost>
-        <!--Todo Details-->
+        <!--Add Post-->
+        <div id="addPostDiv" *ngIf=addPostsPresd>
+            <form #addPostF="ngForm" (ngSubmit)="addPostToUser(addPostF.form.valid,userData._id!)">
+                <label for="title">Title: </label>
+                <input type="text" required #title="ngModel" name="title" [(ngModel)]="newPost.title">
+                <h6 *ngIf="!title.valid && title.dirty && title.touched" style="color: red;">Post Must Have title</h6>
+                <label for="title">Body:</label>
+                <input type="text" required #body="ngModel" name="body" [(ngModel)]="newPost.body">
+                <h6 *ngIf="!body.valid && body.dirty && body.touched" style="color: red;">Post Must Have body</h6>
+                <div id="addPostBtns">
+                    <input type="submit" value="Save">
+                    <input type="button" value="Cancel" (click)="addPostsPresd = !addPostsPresd">
+                </div>
+            </form>
+        </div>
+        <!--Post Details-->
         <app-postmain [userPosts]='userData.posts!' *ngIf="!addPostsPresd"></app-postmain>
     </div>
 </div>

@@ -1,5 +1,5 @@
 export class Post {
-    _id : String ="";
+    _id? : String ="";
     title : String = "";
     body : String ="";
 }

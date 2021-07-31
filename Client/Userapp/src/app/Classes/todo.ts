@@ -1,5 +1,5 @@
 export class Todo {
-    _id : String = "";
+    _id? : String = "";
     title : String = "";
-    completed : Boolean = true;
+    completed? : Boolean = false;
 }

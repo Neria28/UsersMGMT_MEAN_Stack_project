@@ -32,10 +32,9 @@ export class UsermainComponent implements OnInit {
   }
 
   search(inp : string){
-    if(inp !=''){
+    if(inp != ''){
       this.searchUsers = this.users.filter(x=> x.name!.toLowerCase().includes(inp)||x.email!.toLowerCase().includes(inp))
-
-    }else{
+    }else if(inp=''){
       this.users = this.users
     }
   }

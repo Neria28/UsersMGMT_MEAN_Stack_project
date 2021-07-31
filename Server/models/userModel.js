@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const todosSchema = new mongoose.Schema({
         title: { type: String, require: true },
-        completed: { type : Boolean, requires: false, default: false }
+        completed: { type : Boolean, require: false, default: false }
 })
 
 const postsSchema = new mongoose.Schema({
@@ -12,6 +12,7 @@ const postsSchema = new mongoose.Schema({
 
 
 const userSchema = new mongoose.Schema({
+        
         name: { type: String, required: true },
         email: { type: String, required: true },
         street: { type: String, required: false, default: "" },

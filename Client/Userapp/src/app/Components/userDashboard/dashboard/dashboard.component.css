@@ -2,10 +2,17 @@
     text-align:center;
 }
 
-#addTodoDiv{
+#addTodoDiv , #addPostDiv{
     display: flex;
     justify-content: center;
+    justify-self: center;
     border-style: solid;
     border-color: darkorchid;
+    width: 200px;
+    margin: 0 0 0 26.5% ;
+}
 
+#addTodoBtns , #addPostBtns{
+    display: flex;
+    justify-content: flex-end;
 }

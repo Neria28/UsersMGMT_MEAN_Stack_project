@@ -15,7 +15,6 @@ import { AddUserComponent } from './Components/userDashboard/add-user/add-user.c
 import { DashboardComponent } from './Components/userDashboard/dashboard/dashboard.component';
 import { PostmainComponent } from './Components/userDashboard/posts/postmain/postmain.component';
 import { PostComponent } from './Components/userDashboard/posts/post/post.component';
-import { AddpostComponent } from './Components/userDashboard/posts/addpost/addpost.component';
 import { TodomainComponent } from './Components/userDashboard/todos/todomain/todomain.component';
 import { TodoComponent } from './Components/userDashboard/todos/todo/todo.component';
 
@@ -32,7 +31,6 @@ const appRouter : Routes = [{path : 'userDashboard/:userId' , component : Dashbo
     DashboardComponent,
     PostmainComponent,
     PostComponent,
-    AddpostComponent,
     TodomainComponent,
     TodoComponent,
   ],

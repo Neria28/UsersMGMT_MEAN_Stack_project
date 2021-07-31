@@ -1,7 +1,7 @@
 # User managment Angular WebSite
-<h4>Progress</h4>
+<h4>Progress📈</h4>
 <ul>31/07/2021
-  <ul><strong>Back-end</strong>
+  <ul><strong>Back-end </strong>
     <li>post and put requests were added for both posts and todos</li>
   </ul>
   <ul><strong>Front-End</strong>

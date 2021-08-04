@@ -3,7 +3,7 @@
 <span>MEAN STACK.
 A User managemnt web app. each user have its information, tasks and posts and ability to update, create and delete them</span><br/><br/>
 
-Techogies in This FullStack:
+Technologies in This FullStack:
 <ul>
    <img src="https://seeklogo.com/images/M/mongodb-logo-4A71340576-seeklogo.com.png" width="55px" title="hover text">
   MongoDB - Database<br/>

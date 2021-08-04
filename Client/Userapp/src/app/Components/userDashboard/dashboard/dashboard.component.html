@@ -1,4 +1,4 @@
-<div id="dashbDiv">
+<div id="dashbDiv"><br/>
     <!--Todos Section-->
     <div id="todosSec">
         <div id="todoHeader">
@@ -6,28 +6,31 @@
             <input type="button" [value]="addTodoPresd? 'Back' : 'Add Todo'" (click)="addTodoPresd=!addTodoPresd">
         </div>
         <!--Add Todo-->
+        <div id="todoActions">
         <div id="addTodoDiv" *ngIf=addTodoPresd>
             <form #addTodoF="ngForm" (ngSubmit)="addTodoToUser(addTodoF.form.valid,userData._id!)">
                 <label for="title">Title</label>
                 <input type="text" required #title="ngModel" name="title" [(ngModel)]="newTodo.title">
                 <h6 *ngIf="!title.valid && title.dirty" style="color: red;">Todo Must Have title</h6>
                 <div id="addTodoBtns">
-                    <input type="submit" value="Save">
-                    <input type="button" value="Cancel" (click)="addTodoPresd = !addTodoPresd">
+                    <input type="submit" value="Save" [disabled]="!addTodoF.valid">
+                    <input id="cancelBtn"  type="button" value="Cancel" (click)="addTodoPresd = !addTodoPresd">
                 </div>
             </form>
-        </div>
+        </div><br/>
         <!--Todo Details-->
         <app-todomain [userTodos]='userData.todos!' *ngIf="!addTodoPresd"></app-todomain>
+        </div>
     </div>
 
     <!--Posts Section-->
     <div id="postsSec">
-        <div id="postHeader">
+        <br/><div id="postHeader">
             <span>{{userData.name}} - Posts</span>
             <input type="button" [value]="addPostsPresd? 'Back' : 'Add Post'" (click)="addPostsPresd=!addPostsPresd">
         </div>
         <!--Add Post-->
+        <div id="postActions">
         <div id="addPostDiv" *ngIf=addPostsPresd>
             <form #addPostF="ngForm" (ngSubmit)="addPostToUser(addPostF.form.valid,userData._id!)">
                 <label for="title">Title: </label>
@@ -37,12 +40,13 @@
                 <input type="text" required #body="ngModel" name="body" [(ngModel)]="newPost.body">
                 <h6 *ngIf="!body.valid && body.dirty && body.touched" style="color: red;">Post Must Have body</h6>
                 <div id="addPostBtns">
-                    <input type="submit" value="Save">
-                    <input type="button" value="Cancel" (click)="addPostsPresd = !addPostsPresd">
+                    <input type="submit" value="Save" [disabled]="!addPostF.valid">
+                    <input id="cancelBtn" type="button" value="Cancel" (click)="addPostsPresd = !addPostsPresd">
                 </div>
             </form>
         </div>
         <!--Post Details-->
-        <app-postmain [userPosts]='userData.posts!' *ngIf="!addPostsPresd"></app-postmain>
+       <br/><app-postmain  [userPosts]='userData.posts!' *ngIf="!addPostsPresd"></app-postmain>
+    </div>
     </div>
 </div>

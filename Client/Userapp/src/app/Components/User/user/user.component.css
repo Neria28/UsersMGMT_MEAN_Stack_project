@@ -1,26 +1,73 @@
 h6{
     line-height: 10px;
 }
+label{
+    margin: 0 0 0 5px;
+    }
+input[type=text]{
+    padding:8px 4px;
+    margin:5px 0 5px 2px;
+    border-radius:  20px;
+    border: 2px solid #eee;
+    box-shadow:0 0 15px 4px rgba(0, 0, 0, 0.062);
+}
+
 #userData{
     border-style: solid;
     border-radius: 5px;
     height: auto;
     width: 300px;
-    margin: 0 auto 0 auto;
+    margin: 0 20%;
 }
 #usrOtrData{
     border-style: solid;
     border-radius: 5px;
+    border-color: #0cb9c5;
     height: auto;
     width: 250px;
-    margin: 0 auto 0 0;
+    margin: 0 auto 0 7%;
 }
 
 /* change the crusor to pointer */
-#userId{
+#userId , #otherData{
     cursor: pointer;
 }
+
 #reqBtns{
     display: flex;
     justify-content: flex-end;
+    column-gap: 5px;
+    row-gap: 2px;
 }
+
+#updateBtn , #deleteBtn{
+    margin: 4px 5px 4px 0 ;
+}
+#updateBtn{
+    background:#ffffff;
+	color: #039603;
+    padding: 8px 8px;
+    border-radius: 5px;
+    border-style: solid ;
+    border-color: #039603;
+}
+#updateBtn:hover{
+    background-color: #039603;
+    color:#ffffff;
+}
+
+#deleteBtn{
+    background:#ffffff;
+    color: #e72b2b;
+    padding: 8px 8px;
+    border-radius: 5px;
+    border-style: solid ;
+    border-color: #e72b2b;
+}
+#deleteBtn:hover{
+    background-color: #e72b2b;
+    color: #ffffff;
+
+}
+
+

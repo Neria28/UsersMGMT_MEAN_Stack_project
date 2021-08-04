@@ -5,7 +5,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 
-
 import { AppComponent } from './app.component';
 // Users Comps Section
 import { UsermainComponent } from './Components/User/usermain/usermain.component';
@@ -19,6 +18,8 @@ import { TodomainComponent } from './Components/userDashboard/todos/todomain/tod
 import { TodoComponent } from './Components/userDashboard/todos/todo/todo.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 
 const appRouter : Routes = [{path : 'userDashboard/:userId' , component : DashboardComponent},
                             {path : 'adduser' , component : AddUserComponent}]
@@ -40,8 +41,8 @@ const appRouter : Routes = [{path : 'userDashboard/:userId' , component : Dashbo
     FormsModule,
     RouterModule.forRoot(appRouter),
     ReactiveFormsModule,
-    BrowserAnimationsModule
-
+    BrowserAnimationsModule,
+    FontAwesomeModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

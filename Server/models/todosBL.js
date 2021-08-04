@@ -22,7 +22,7 @@ exports.createTodo = function(userId,todoObj){
                     if(err){
                         reject(err)
                     }else{
-                        resolve("created")
+                        resolve(data.todos[data.todos.length - 1])
                     }
                 })
             }

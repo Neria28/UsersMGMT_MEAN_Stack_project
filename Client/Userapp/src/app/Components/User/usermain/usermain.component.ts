@@ -3,14 +3,14 @@ import { Subscription } from 'rxjs';
 import { User } from 'src/app/Classes/user';
 import { UserStorageService } from 'src/app/services/user-storage.service';
 import { UserUtilsService } from 'src/app/services/user-utils.service';
-
+import { faUserPlus } from '@fortawesome/free-solid-svg-icons'
 @Component({
   selector: 'app-usermain',
   templateUrl: './usermain.component.html',
   styleUrls: ['./usermain.component.css']
 })
 export class UsermainComponent implements OnInit {
-  
+  faUserPlus = faUserPlus
   @Output()
   users : User[] = []
   @Output()
@@ -33,10 +33,12 @@ export class UsermainComponent implements OnInit {
 
   search(inp : string){
     if(inp != ''){
-      this.searchUsers = this.users.filter(x=> x.name!.toLowerCase().includes(inp)||x.email!.toLowerCase().includes(inp))
-    }else if(inp=''){
-      this.users = this.users
+      console.log(inp)
+      this.searchUsers = this.users.filter(x=> x.name!.includes(inp)||x.email!.includes(inp))
+    }else{
+      this.searchUsers = this.users
     }
+    
   }
   ngOnDestroy(){
     this.sub.unsubscribe()

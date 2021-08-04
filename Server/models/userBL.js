@@ -36,11 +36,11 @@ exports.addUser = function(obj){
             todos : obj.todos,
             posts : obj.posts
         });
-            user.save(function(err){
+            user.save(function(err , data){
                 if(err){
                     reject(err)
                 }else{
-                    resolve('Created!')
+                    resolve(data)
                 }
             })
     })

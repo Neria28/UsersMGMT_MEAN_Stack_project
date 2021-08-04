@@ -1,9 +1,17 @@
 <div id="userMainDiv">
     <div id="search">
-        <input placeholder="Search" type="text" name="search" #src (keyup)="search(src.value)" (click)="search(src.value)">
-        <input type="button" value="Search">
-        <input type="button" value="Add" routerLink="/adduser">
-    </div>    
+        <input placeholder="Search" type="text" name="search" #src>
+        &nbsp;<button id="addUsrBtn" routerLink="/adduser"><fa-icon [icon]="faUserPlus"></fa-icon></button>
+        <br/>
+        <button id="srcBtn" (click)="search(src.value)">
+            <span class="blue">S</span>
+            <span class="red">e</span>
+            <span class="yellow">a</span>
+            <span class="blue">r</span>
+            <span class="green">c</span>
+            <span class="red">h</span>
+        </button>
+    </div><br/>
     <!--All Users And thier data-->
     <div id="userDiv">
         <div div="userData" *ngIf="!addUserPresd">

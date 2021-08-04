@@ -16,7 +16,7 @@ export class UserUtilsService {
     return this.http.get<User[]>(this.uri)
   }
 
-  getUser(id : string){
+  getUser(id : String){
     return this.http.get<User>(`${this.uri}/${id}`)
   }
 

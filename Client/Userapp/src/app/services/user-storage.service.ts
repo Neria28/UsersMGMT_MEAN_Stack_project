@@ -12,7 +12,7 @@ export class UserStorageService {
 
   constructor() { }
   
-  //Save The Users in Service (less Data Requests)
+  //Save The Users in Service
   saveUsersData(users : User[]){
     this.UsersStorage = users
   }
@@ -34,18 +34,30 @@ export class UserStorageService {
     usersArr.push(user);
     this.UsersStorage = usersArr;
   }
-
+  
   addNewTodoToUser(userId : String , newTodo : Todo){
     let usersArr= this.UsersStorage;
     let crntUser = usersArr.findIndex((user : User)=> user._id === userId);
-    usersArr[crntUser].todos?.push(newTodo)
+    usersArr[crntUser].todos!.push(newTodo)
     this.UsersStorage = usersArr
   }
 
+  markTodoCompleted(userId :string , todoId: String){
+    
+    let usersArr = this.UsersStorage;
+    let crntUser = usersArr.findIndex((user : User)=> user._id === userId);
+    usersArr[crntUser].todos!.find((x : Todo) => x._id == todoId)!.completed! = true;
+    this.UsersStorage = usersArr;
+    console.log(this.UsersStorage)
+  }
+  
   addNewPostToUser(userId : String , newPost : Post){
     let usersArr= this.UsersStorage;
     let crntUser = usersArr.findIndex((user : User)=> user._id === userId);
     usersArr[crntUser].posts?.push(newPost)
     this.UsersStorage = usersArr
   }
+
+  
+
 }

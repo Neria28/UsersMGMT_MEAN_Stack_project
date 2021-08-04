@@ -11,6 +11,7 @@ export class TodosandpostsService {
   todoUri : string ="http://localhost:4150/api/todos";
   postUri : string ="http://localhost:4150/api/posts"
   constructor(private http : HttpClient) { }
+
 //Requests for todos
   postTodo(userId : String ,todoObj : Todo){
     return this.http.post(`${this.todoUri}/${userId}`, todoObj)
@@ -21,7 +22,7 @@ export class TodosandpostsService {
     .put(`${this.todoUri}/${todoId}` , todo)
   }
 
-//Requests for posts\
+//Request for posts
 postPost(userId : String ,postObj : Post){
   return this.http.post(`${this.postUri}/${userId}`, postObj)
 }

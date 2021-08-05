@@ -14,7 +14,7 @@ Technologies in This FullStack:
   Node.js - Backend<br/>
   </ul>
   <h2>ScreenShot</h2>
-  <img src="https://github.com/Neria28/UsersMGMT_MEAN_Stack_project-/blob/main/ScreenGif.gif?raw=true" width="1100">
+  <img src="https://github.com/Neria28/UsersMGMT_MEAN_Stack_project/blob/main/screenshot.gif?raw=true" width="1100">
 <h4>Progress📈</h4>
 <ul>04/08/2021
   <ul><strong>Back-end </strong>

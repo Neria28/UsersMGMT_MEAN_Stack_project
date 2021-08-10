@@ -1,9 +1,13 @@
 h6{
     line-height: 10px;
 }
-label{
+#userId{
     margin: 0 0 0 5px;
-    }
+    
+}
+label {
+    margin: 0 0 0 5px;
+}
 input[type=text]{
     padding:8px 4px;
     margin:5px 0 5px 2px;

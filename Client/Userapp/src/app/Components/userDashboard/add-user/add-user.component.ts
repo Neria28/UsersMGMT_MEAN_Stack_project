@@ -26,7 +26,7 @@ export class AddUserComponent implements OnInit {
     if(f.valid == true){
     this.sub = this.userUtils.postUser(this.userToAdd)
       .subscribe(data => {
-        alert(data)
+        alert("User Created")
         this.userStorage.addUserData(data as User);
         this.router.navigate([''])
       })

@@ -1,7 +1,8 @@
 <div id="userData" [style.backgroundColor]="isClicked? '#fa824c4d' : 'white' " #usrDataDiv [style.border-color]="checkTodosStatus()? '#008000':'#cf2727'">
     
     <form #usrForm="ngForm" (ngSubmit)="updateUser(usrForm.form.valid)">
-        <span id="userId" (click)="goToDashboard()">ID:{{user._id}}</span><br />
+        <br/>
+        <span id="userId" (click)="goToDashboard()"><b>user ID: {{user._id}}</b></span><br/><br/>
         <!--User Name-->
         <label for="name">Name </label><br/>
         <input required type="text" name="name" #name="ngModel" [(ngModel)]="user.name"><br />
@@ -13,12 +14,12 @@
         
         <!--Other Data Section-->
         <div id="usrOtrDataBtn">
-            <span id="otherData" (mouseover)="showOtherData = true" (click)="showOtherData =false ">Other Data</span><br />
+            <span id="otherData" (mouseover)="showOtherData = true" (click)="showOtherData =false "><b>Other Data</b></span><br />
         </div>
         
         <!--Other Data Div-->
         <div id="usrOtrData" [style.display]="showOtherData? 'block' : 'none' ">
-            <label for="street">Street </label><br/>
+            <br/><label for="street">Street </label><br/>
             <input type="text" name="street" #street="ngModel" [(ngModel)]="user.street"><br />
             <label for="city">City </label><br/>
             <input type="text" name="city" #city="ngModel" [(ngModel)]="user.city"><br />

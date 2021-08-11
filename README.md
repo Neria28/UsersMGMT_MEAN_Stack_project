@@ -5,13 +5,12 @@ A User managemnt web app. each user have its information, tasks and posts and ab
 
 Technologies in This FullStack:
 <ul>
-   <img src="https://seeklogo.com/images/M/mongodb-logo-4A71340576-seeklogo.com.png" width="55px" title="hover text">
-  MongoDB - Database<br/>
-  EXPRESS - Server<br/>
-  <img src="https://seeklogo.com/images/A/angular-logo-B76B1CDE98-seeklogo.com.png" width="15px" title="hover text">
-  Angular - Frontend (Client)<br/>
-  <img src="https://seeklogo.com/images/N/nodejs-logo-FBE122E377-seeklogo.com.png" width="15px" title="hover text">
-  Node.js - Backend<br/>
+   <img src="https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white" width="70" height="22">
+   <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" width="70" height="22">
+   <img src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white" width="70" height="22">
+   <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" width="70" height="22">
+   <img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white" width="70" height="22">
+   
   </ul>
   
   <h2>Start This Project in Your Machine</h2>

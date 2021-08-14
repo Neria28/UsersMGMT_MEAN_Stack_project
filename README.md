@@ -5,17 +5,40 @@ A User managemnt web app. each user have its information, tasks and posts and ab
 
 Technologies in This FullStack:
 <ul>
-   <img src="https://seeklogo.com/images/M/mongodb-logo-4A71340576-seeklogo.com.png" width="55px" title="hover text">
-  MongoDB - Database<br/>
-  EXPRESS - Server<br/>
-  <img src="https://seeklogo.com/images/A/angular-logo-B76B1CDE98-seeklogo.com.png" width="15px" title="hover text">
-  Angular - Frontend (Client)<br/>
-  <img src="https://seeklogo.com/images/N/nodejs-logo-FBE122E377-seeklogo.com.png" width="15px" title="hover text">
-  Node.js - Backend<br/>
+   <img src="https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white" width="70" height="22">
+   <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" width="70" height="22">
+   <img src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white" width="70" height="22">
+   <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" width="70" height="22">
+   <img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white" width="70" height="22">
+   
   </ul>
+  
+  <h2>Start This Project in Your Machine</h2>
+  <ol>
+   <li>Clone this project and "cd" to cloned dir.
+      <pre><code>git clone git@github.com/Neria28/UsersMGMT_MEAN_Stack_project.git</code></pre>
+   </li>
+   <li>cd to server and "npm start".
+      <pre><code>cd server && npm start</code></pre>
+   </li>
+    <li>cd to client\Userapp and "ng serve".
+      <pre><code>cd client\Userapp && ng serve</code></pre>
+   </li>
+   </ol>
   <h2>ScreenShot</h2>
-  <img src="https://github.com/Neria28/UsersMGMT_MEAN_Stack_project/blob/main/screenshot.gif?raw=true" width="1100">
+  <img src="https://github.com/Neria28/UsersMGMT_MEAN_Stack_project/blob/main/ScreenGif.gif?raw=true" width="1100">
+
+
 <h4>Progress📈</h4>
+<ul>10/08/2021
+  <ul><strong>Back-end </strong>
+    <li>DB changed To Cloud MongoDB☁️</li>
+  </ul>
+  <ul><strong>Front-End</strong>
+    <li>Minor Css Changes</li>
+  </ul>
+</ul>
+
 <ul>04/08/2021
   <ul><strong>Back-end </strong>
     <li>Post requests modifing</li>

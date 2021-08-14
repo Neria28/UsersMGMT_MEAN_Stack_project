@@ -16,11 +16,11 @@
 
 #mtpBTN{
     background:#ffffff;
-	color: #d2df25;
+	color: #000000;
+    border-color: #d2df25;
     padding: 8px 8px;
     border-radius: 5px;
     border-style: solid ;
-    border-color: #d2df25;
     margin: 0 0 2px 0;
 }
 

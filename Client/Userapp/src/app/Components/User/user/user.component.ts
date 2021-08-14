@@ -14,7 +14,6 @@ export class UserComponent implements OnInit {
   @Input()
   user : User = new User()
 
-  isClicked : Boolean = false;
   sub : Subscription = new Subscription()
   showOtherData : Boolean = false
   
@@ -25,15 +24,13 @@ export class UserComponent implements OnInit {
     return this.user.todos?.map(x=>x.completed).includes(false)? false : true;
   }
 
+  chkSelectedUser() :boolean{
+    return (this.user._id === this.userUtils.userId) ? true : false;
+  }
+
   goToDashboard(){
-    this.isClicked = !this.isClicked
-    if(this.isClicked){
-      sessionStorage["userId"] = this.user._id
-      this.router.navigate(['/userDashboard/'+this.user._id])
-    }else{
-      this.router.navigate(['/'])
-    }
-    
+    this.userUtils.userId = this.user._id as string;
+    this.router.navigate(['/userDashboard/'+this.user._id])
   }
   
   updateUser(isValid : Boolean){

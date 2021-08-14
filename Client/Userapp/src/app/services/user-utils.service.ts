@@ -9,7 +9,8 @@ export class UserUtilsService {
 
   uri : string = "http://localhost:4150/api/users"
 
-
+  userId :string = '';
+  
   constructor(private http : HttpClient) { }
   
   getUsers(){

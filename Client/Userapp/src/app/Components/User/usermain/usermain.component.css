@@ -2,12 +2,14 @@
     text-align: center;
 }
 input[type=text]{
-  padding:8px 4px;
-  margin:5px 0 5px 2px;
+  padding: 8px 4px;
+  margin: 5px 0 5px 2px;
   width: 300px;
-  border-radius:  8px;
+  border-radius: 20px;
   border: 2px solid #eee;
-  box-shadow:0 0 15px 4px rgba(0, 0, 0, 0.062);}
+  box-shadow: 0 0 15px 4px rgb(14 25 54 / 49%);
+}
+
 #addUsrBtn{
   color: #039603;
   padding: 4px 4px;
@@ -81,12 +83,12 @@ input[type=text]{
 
 #userDiv::-webkit-scrollbar-thumb
 {
-  background-color: #d6dee1;
+  background-color: #92999c;
   border-radius: 20px;
   border: 6px solid transparent;
   background-clip: content-box;
 }
 #userDiv::-webkit-scrollbar-thumb:hover {
-  background-color: #a8bbbf;
+  background-color: #6c7475;
   cursor: pointer;
 }

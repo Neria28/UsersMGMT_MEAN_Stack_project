@@ -1,4 +1,4 @@
-<div id="userData" [style.backgroundColor]="isClicked? '#fa824c4d' : 'white' " #usrDataDiv [style.border-color]="checkTodosStatus()? '#008000':'#cf2727'">
+<div id="userData" [style.backgroundColor]="chkSelectedUser()? '#fa824c4d' : 'white' " #usrDataDiv [style.border-color]="checkTodosStatus()? '#008000':'#cf2727'">
     
     <form #usrForm="ngForm" (ngSubmit)="updateUser(usrForm.form.valid)">
         <br/>

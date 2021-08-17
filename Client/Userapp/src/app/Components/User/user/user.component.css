@@ -33,7 +33,6 @@ input[type=text]{
     margin: 0 auto 0 7%;
 }
 
-/* change the crusor to pointer */
 #userId , #otherData{
     cursor: pointer;
 }

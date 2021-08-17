@@ -26,7 +26,6 @@ export class TodoComponent implements OnInit {
       .subscribe(data => {
         alert(data)
         let userID = sessionStorage.getItem('userId')!;
-        console.log(userID)
         this.userStorage.markTodoCompleted(userID , this.todo._id!)
       })
   }

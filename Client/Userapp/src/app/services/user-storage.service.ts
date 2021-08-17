@@ -48,7 +48,6 @@ export class UserStorageService {
     let crntUser = usersArr.findIndex((user : User)=> user._id === userId);
     usersArr[crntUser].todos!.find((x : Todo) => x._id == todoId)!.completed! = true;
     this.UsersStorage = usersArr;
-    console.log(this.UsersStorage)
   }
   
   addNewPostToUser(userId : String , newPost : Post){

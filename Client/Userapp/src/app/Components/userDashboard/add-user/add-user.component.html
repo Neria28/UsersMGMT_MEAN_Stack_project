@@ -5,8 +5,10 @@
             <div id="form">
                 <label for="name">Name </label><br/>
                 <input type="text" required #name="ngModel" name="name" [(ngModel)]="userToAdd.name"><br />
+                <h6 *ngIf="!name.valid && name.dirty" style="color: #ff0000;">user must have name!</h6>
                 <label for="name">Email </label><br/>
-                <input type="text" required #Email="ngModel" name="email" [(ngModel)]="userToAdd.email">
+                <input type="text" required #email="ngModel" name="email" [(ngModel)]="userToAdd.email">
+                <h6 *ngIf="!email.valid && email.dirty" style="color: #ff0000;">user must have name!</h6>
                 <div id="btnsDiv">
                     <input type="submit" value="Add">
                     <input id="cancelBtn" type="button" value="Cancel" routerLink='/'>

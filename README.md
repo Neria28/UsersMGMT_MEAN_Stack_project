@@ -80,3 +80,9 @@ Technologies in This FullStack:
 <ul> 11/07/2021
   <li>Created Client Architecture</li>  
 </ul>
+
+
+<h4>Things to do</h4>
+<ul><strong>Front-End</strong>
+    <li>Create a floating modal to replace browser alerts</li>
+  </ul>

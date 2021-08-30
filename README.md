@@ -11,6 +11,11 @@ Technologies in This FullStack:
    <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" width="70" height="22">
    <img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white" width="70" height="22">
    
+   <li>In praticular</li>
+   <ul>
+   <li>MongoDB With sub-schemas and sub-documents</li>
+      <li> NodeJS & Express server with middleware architecture</li>
+   </ul>
   </ul>
   
   <h2>Start This Project in Your Machine</h2>
